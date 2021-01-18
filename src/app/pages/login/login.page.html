@@ -1,0 +1,40 @@
+<ion-header>
+  <ion-toolbar color="primary">
+    <ion-title>Banco Nexos</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content padding>
+  <form [formGroup]="loginUserForm" (ngSubmit)="signUp()">
+    <ion-card center>
+      <ion-card-header color="secondary">
+        Inicio de sesion
+      </ion-card-header>
+      <ion-card-content>
+        <ion-list>
+          <ion-item>
+            <ion-icon class="iconForm" name="person-sharp"></ion-icon>
+            <ion-input inputmode="text" placeholder="Usuario" formControlName="user" ></ion-input>
+          </ion-item>
+          <div *ngFor="let error of errorMessages.user">
+            <ng-container *ngIf="user.hasError(error.type) && (user.dirty || user.touched)">
+              <small class="error-message">{{error.message}}</small>
+            </ng-container>
+          </div> 
+          <ion-item>
+            <ion-icon class="iconForm" name="lock-open"></ion-icon>
+            <ion-input inputmode="password" placeholder="Contraseña" formControlName="pass"></ion-input>
+          </ion-item>
+          <div *ngFor="let error of errorMessages.pass">
+            <ng-container *ngIf="pass.hasError(error.type) && (pass.dirty || pass.touched)">
+              <small class="error-message">{{error.message}}</small>
+            </ng-container>
+          </div> 
+        </ion-list>
+        <div padding>
+          <ion-button slot="start"  type="submit">Iniciar sesion</ion-button>
+        </div>
+      </ion-card-content>
+    </ion-card>
+  </form>
+</ion-content>

@@ -1,0 +1,36 @@
+<ion-header [translucent]="true">
+  <ion-toolbar color="primary">
+    <ion-title>
+      Clima
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="ion-padding">
+  <ion-grid>
+      <!--City-->
+      <ion-row class="ion-text-center">
+          <ion-col class="ion-text-center">
+              <h1>{{resultado.name}}</h1>
+          </ion-col>
+      </ion-row>
+      <ion-row class="ion-text-center">
+          <ion-col>
+              <p>{{weatherDesc.description}}</p>
+          </ion-col>
+      </ion-row>
+      <ion-row class="ion-text-center">
+          <ion-col>
+              <img [src]="weatherImage">
+          </ion-col>
+          <ion-col>
+              <h2 class="temperature">{{temperatura.temp}}º</h2>
+          </ion-col>
+      </ion-row>
+      <ion-row>
+          <ion-col>
+              <h3 class="viento">💨 {{viento.speed}} km/h</h3>
+          </ion-col>
+      </ion-row>
+  </ion-grid>
+</ion-content>

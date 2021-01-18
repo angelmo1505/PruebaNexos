@@ -1,0 +1,24 @@
+<ion-header [translucent]="true">
+  <ion-toolbar color="primary">
+    <ion-title>
+      Tranferencias
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <ion-card >
+    <ion-card-header color="secondary">
+      Opciones de tranferencia
+    </ion-card-header>    
+    <ion-card-content>      
+      <ion-button expand="full" (click)="generateQr()"> 
+        <ion-label>Generar Qr</ion-label>  
+      </ion-button>        
+      <ion-button expand="full" (click)="scanCode()"> 
+        <ion-label>Tranferir usando imagen </ion-label>
+      </ion-button>   
+        
+    </ion-card-content>
+  </ion-card>
+</ion-content>

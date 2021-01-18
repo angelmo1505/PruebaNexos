@@ -1,0 +1,44 @@
+<ion-header [translucent]="true">
+  <ion-toolbar color="primary">
+    <ion-title>
+      Cuentas
+    </ion-title>
+    <ion-buttons slot="end">
+      <ion-button slot="end"(click)="openPopover($event)">
+        <ion-icon name="settings"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <ion-card>
+    <ion-card-title color="tertiary">
+      Cuentas y movimientos
+    </ion-card-title >  
+  </ion-card>
+
+  <ion-card center *ngFor="let data of dataUser">
+    <ion-card-header color="secondary">
+      {{data.des_type_account}}
+    </ion-card-header>    
+    <ion-card-content>
+      <ion-list>
+        <ion-item>
+          <ion-label>Tipo de cuenta</ion-label>
+          {{data.des_type_account}}
+        </ion-item>
+        <ion-item>
+          <ion-label>Número de cuenta</ion-label>
+          {{data.number_account}}
+        </ion-item>
+        <ion-item>
+          <ion-label>Saldo disponible</ion-label>
+          {{data.balance_account}}
+        </ion-item>
+      </ion-list>
+      <ion-button (click)="vervar()" slot="end" >Ver movimientos</ion-button>
+      
+    </ion-card-content>
+  </ion-card>
+</ion-content>

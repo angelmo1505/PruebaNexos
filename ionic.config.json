@@ -1,5 +1,7 @@
 {
   "name": "pruebaNexos",
-  "integrations": {},
+  "integrations": {
+    "cordova": {}
+  },
   "type": "angular"
 }
